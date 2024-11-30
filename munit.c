@@ -1275,7 +1275,9 @@ munit_replace_stderr(FILE* stderr_buf) {
 
   return -1;
 }
+#endif /* !defined(MUNIT_NO_BUFFER) || !defined(MUNIT_NO_FORK) */
 
+#if !defined(MUNIT_NO_BUFFER)
 static void
 munit_restore_stderr(int orig_stderr) {
   if (orig_stderr != -1) {
